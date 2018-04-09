@@ -10,11 +10,20 @@ namespace _090418_eksam_4
     {
         static void Main(string[] args)
         {
+            List<DateTime> times = GenerateTimestamps(30, 2010, 1940);
 
+            int oldest = FindOldest(times);
+            int average = FindAverage(times);
+            int youngest = MinAge(times);
+            int theMonth = SpecialMonth(times);
 
+            List<DateTime> orderedTimes = OrderDates(times);
+
+            Console.WriteLine($"{oldest} {average} {youngest} {theMonth}");
+            Console.ReadKey();
         }
 
-        public List<DateTime> GenerateTimestamps(int amount, int maxY, int minY)
+        static List<DateTime> GenerateTimestamps(int amount, int maxY, int minY)
         {
             int[] monthMax = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             Random rnd = new Random();
@@ -39,16 +48,77 @@ namespace _090418_eksam_4
             return times;
         }
 
-        public int FindOldest(List<DateTime> times)
+        static int FindOldest(List<DateTime> times)
         {
-            int age = 10;
+            int age = 10, maxAge = 0;
 
             for (int i = 0; i < times.Count(); i++)
             {
-                age = DateTime.Now.Year - times.ElementAt(i).Year;
+                age = GetAge(times[i]);
+
+                if (maxAge < age)
+                    maxAge = age;
             }
             
+            return maxAge;
+        }
+
+        static int FindAverage(List<DateTime> times)
+        {
+            int average = 0;
+
+            for (int i = 0; i < times.Count; i++)
+            {
+                average += GetAge(times[i]);
+            }
+            average /= times.Count;
+
+            return average;
+        }
+
+        static int GetAge(DateTime time)
+        {
+
+            int age = DateTime.Now.Year - time.Year;
+
             return age;
+        }
+
+        static int MinAge(List<DateTime> times)
+        {
+            int minAge = 100;
+
+            for (int i = 0; i < times.Count; i++)
+            {
+                if (minAge > GetAge(times[i]))
+                    minAge = GetAge(times[i]);
+            }
+            return minAge;
+        }
+
+        static int SpecialMonth(List<DateTime> times)
+        {
+            int theMonth = 0;
+            int[] monthList = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            for (int i = 0; i < times.Count; i++)
+            {
+                monthList[times.ElementAt(i).Month - 1]++;
+            }
+
+            for (int i = 0; i < monthList.Count(); i++)
+            {
+                if (monthList[i] > theMonth)
+                    theMonth = monthList[i];
+            }
+            return theMonth;
+        }
+
+        static List<DateTime> OrderDates(List<DateTime> times)
+        {
+            List<DateTime> orderedTimes = times.OrderBy(x => x.TimeOfDay).ToList();
+
+            return orderedTimes;
+
         }
     }
 }

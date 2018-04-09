@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "090418-eksam-2", "090418-ek
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "090418-eksam-3", "090418-eksam-3\090418-eksam-3.csproj", "{7D115697-BB83-4654-AEAA-7835A9129FAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "090418-eksam-4", "090418-eksam-4\090418-eksam-4.csproj", "{9C9063D0-487C-47DC-B68C-ED033EBE88DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7D115697-BB83-4654-AEAA-7835A9129FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D115697-BB83-4654-AEAA-7835A9129FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D115697-BB83-4654-AEAA-7835A9129FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9063D0-487C-47DC-B68C-ED033EBE88DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9063D0-487C-47DC-B68C-ED033EBE88DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9063D0-487C-47DC-B68C-ED033EBE88DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9063D0-487C-47DC-B68C-ED033EBE88DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

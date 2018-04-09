@@ -7,7 +7,7 @@
     <ProjectGuid>{9C9063D0-487C-47DC-B68C-ED033EBE88DA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_090418_eksam_4</RootNamespace>
-    <AssemblyName>_090418_eksam_4</AssemblyName>
+    <AssemblyName>090418-eksam-4</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

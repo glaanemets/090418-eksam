@@ -24,7 +24,6 @@ namespace _090418_eksam_3
             int amount = int.Parse(Console.ReadLine());
 
             List<DateTime> times = new List<DateTime>();
-
             for (int i = 0; i <= amount; i++)
             {
                 year = rnd.Next(minY, maxY);
@@ -38,9 +37,10 @@ namespace _090418_eksam_3
                     day = rnd.Next(1, monthMax[month - 1]);
                 }
                 
-
                 times.Add(new DateTime(year, month, day));
             }
+
+
 
 
         }
