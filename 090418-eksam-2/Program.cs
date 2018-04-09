@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
-namespace _090418_eksam
+namespace _090418_eksam_2
 {
-    class Program //yl 1
+    class Program
     {
         static void Main(string[] args)
         {
-            List<string> nimed = new List<string>();
-            do
+            string[] names = new string[] { "kaur", "mattias", "kristel",
+                "heleri", "trevor", "kristjan", "kelli", "kevin", "maarika", "laura" };
+
+            string input = Console.ReadLine();
+
+
+            for (int i = 0; i < names.Count(); i++)
             {
-                nimed.Add(UppercaseFirst(Console.ReadLine()));
+              string[] xx = Regex.Split(input, names[i]);
 
-            } while (nimed.ElementAt(nimed.Count() - 1) != "-1");
-
-            nimed.RemoveAt(nimed.Count() - 1);
-
-            for (int i = 0; i < nimed.Count(); i++)
-            {
-                Console.WriteLine($"{nimed.ElementAt(i)}");
-
+                input = string.Join(UppercaseFirst(names[i]), xx);
             }
+            Console.WriteLine($"{input}");
             Console.ReadKey();
         }
 
@@ -37,7 +37,5 @@ namespace _090418_eksam
             // Return char and concat substring.
             return char.ToUpper(s[0]) + s.Substring(1);
         }
-
-
     }
 }
